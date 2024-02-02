@@ -5,34 +5,25 @@ campaign CASCADE;
 -- Create the contacts table
 CREATE TABLE contacts (
     contact_id INT NOT NULL,
-    first_name VARCHAR(20) NOT NULL,
-    last_name VARCHAR(20) NOT NULL,
-    email VARCHAR(50) NOT NULL,
+    first_name VARCHAR(40) NOT NULL,
+    last_name VARCHAR(40) NOT NULL,
+    email VARCHAR(80) NOT NULL,
     PRIMARY KEY (contact_id)
 );
-
--- Select all rows from the contacts table
-SELECT * FROM contacts;
 
 -- Create the category table
 CREATE TABLE category (
     category_id CHAR(4) NOT NULL,
-    category VARCHAR(20) NOT NULL,
+    category VARCHAR(30) NOT NULL,
     PRIMARY KEY (category_id)
 );
-
--- Select all rows from the category table
-SELECT * FROM category;
 
 -- Create the subcategory table
 CREATE TABLE subcategory (
     subcategory_id VARCHAR(8) NOT NULL,
-    subcategory VARCHAR(20) NOT NULL,
+    subcategory VARCHAR(30) NOT NULL,
     PRIMARY KEY (subcategory_id)
 );
-
--- Select all rows from the subcategory table
-SELECT * FROM subcategory;
 
 -- Create the campaign table
 CREATE TABLE campaign (
@@ -56,6 +47,19 @@ CREATE TABLE campaign (
     FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id)
 );
 
+
+
+
+-- Select all rows from the contacts table
+SELECT * FROM contacts;
+
+-- Select all rows from the category table
+SELECT * FROM category;
+
+-- Select all rows from the subcategory table
+SELECT * FROM subcategory;
+
 -- Select all rows from the campaign table
 SELECT * FROM campaign;
+
 
